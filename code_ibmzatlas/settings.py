@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
     # Local APPs
     'posts',
-    'references'
+    'references',
+    'users',
 ]
 
 MIDDLEWARE = [
