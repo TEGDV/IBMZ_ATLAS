@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Refcodes(models.Model):
+class Refcode(models.Model):
     # DB references codes table model
 
     ref_code = models.TextField(unique=True, max_length=30)
