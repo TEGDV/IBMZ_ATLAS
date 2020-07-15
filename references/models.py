@@ -4,7 +4,7 @@ from django.db import models
 class Refcode(models.Model):
     # DB references codes table model
 
-    ref_code = models.TextField(unique=True, max_length=30)
+    ref_code = models.TextField(unique=True, max_length=35)
     system_number = models.TextField(max_length=30,blank=True)
     operation_number = models.TextField(max_length=30)
     operation_name = models.TextField(max_length=30)
