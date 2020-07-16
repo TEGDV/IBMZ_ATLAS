@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/',users_views.login),
     path('register/',users_views.register),
     path('user/home',users_views.home),
+    path('user/home',users_views.profile),
 ]

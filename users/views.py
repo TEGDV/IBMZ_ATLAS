@@ -10,3 +10,5 @@ def register(request):
 def home(request):
     pass
 
+def profile(request):
+    pass

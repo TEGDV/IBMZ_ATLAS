@@ -7,32 +7,55 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/references.css'%}">
   </head>
   <body>
-    <div class="action-buttons">
-      <button type="button" name="add"> ADD NEW </button>
-      <button type="button" name="update"> UPDATE </button>
-      <button type="button" name="delete"> DELETE </button>
+    <header>
+      {% include "nav.html" %}
+    </header>
+
+    <div class="content_container">
+      <section class="container_menu">
+        <div class="menu">
+          <ul class="menu_nav">
+            <li class="menu_nav--item">HOME</li>
+            <li class="menu_nav--item">REFERENCES</li>
+            <li class="menu_nav--item">MANUALS</li>
+            <li class="menu_nav--item">BLOG</li>
+            <li class="menu_nav--item">TEAM Z</li>
+          </ul>
+        </div>
+      </section>
+      <section class='info'>
+        <div class="action-buttons">
+          <button type="button" name="add"> ADD NEW </button>
+          <button type="button" name="update"> UPDATE </button>
+          <button type="button" name="delete"> DELETE </button>
+        </div>
+          <table>
+            <tr>
+              <th>#</th>
+              <th>REFCODE</th>
+              <th>SYSTEM</th>
+              <th>OPERATION_NUMBER</th>
+              <th>OPERATION_NAME</th>
+              <th>HM_DESCRIPTION</th>
+              <th>FIX_ACTIONS</th>
+            </tr>
+            {% for refcode in refcodes %}
+            <tr>
+              <td>{{ refcode.id }}</td>
+              <td>{{ refcode.code }}</td>
+              <td>{{ refcode.system }}</td>
+              <td>{{ refcode.operation_number }}</td>
+              <td>{{ refcode.operation_name }}</td>
+              <td>{{ refcode.hm_description }}</td>
+              <td>{{ refcode.fix_action }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+      </section>
     </div>
-      <table>
-        <tr>
-          <th>#</th>
-          <th>REFCODE</th>
-          <th>SYSTEM</th>
-          <th>OPERATION_NUMBER</th>
-          <th>OPERATION_NAME</th>
-          <th>HM_DESCRIPTION</th>
-          <th>FIX_ACTIONS</th>
-        </tr>
-        {% for refcode in refcodes %}
-        <tr>
-          <td>{{ refcode.id }}</td>
-          <td>{{ refcode.code }}</td>
-          <td>{{ refcode.system }}</td>
-          <td>{{ refcode.operation_number }}</td>
-          <td>{{ refcode.operation_name }}</td>
-          <td>{{ refcode.hm_description }}</td>
-          <td>{{ refcode.fix_action }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+
+
+
+<footer> <h1>I'm the footer :) </h1> </footer>
   </body>
 </html>
