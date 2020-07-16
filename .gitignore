@@ -103,10 +103,10 @@ ENV/
 .DS_Store
 *.sqlite3
 media/
-*.pyc
+**.pyc
 *.db
 *.pid
-# django migrations 
+# django migrations
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
