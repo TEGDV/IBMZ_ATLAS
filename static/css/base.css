@@ -9,62 +9,122 @@ body {
     grid-template-columns: 200px 1fr;
     grid-template-rows: 100px auto 50px;
     grid-template-areas:
-        "header header"
+        "logo header"
         "menu content"
         "footer footer";
 }
-
+/* Start of Header styles */
 .header{
     grid-area: header;
-    border: 1px solid cyan;
-    background-color: paleturquoise;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: whitesmoke;
+    background-color: #03002d ;
+    background-image: linear-gradient(to top left, white -40%, #030f40 , black -54% , #030f405d 89%);
 }
+.logo {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #03002d;
+}
+.logo img{
+   height: 100px;
+    
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 525px;
+}
+
+.user_picture img {
+    height: 75px;
+    border-radius: 50%;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    height: 75px;
+}
+/* end of Header styles */
+
+
 /* Menu navigator styles */
 .menu{
     grid-area: menu;
-    border: 1px solid red;
-    background-color: palevioletred;
+    background-color: #03002d;
+    background-image: linear-gradient(to top left, white -40%, #030f405d 50%, black -54% , #030f405d 89%);
+    
+ 
+}
+.nav_menu{
+    height: 65%;
 }
 .nav_menu--container{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
     
 }
-.menu--item{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 55px;
-    width: 100%;
-    background-color: honeydew;
-}
-.menu--item{
+.menu--item {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 55px;
+    width:95%;
     
-    padding-left: 10px;
+    color: whitesmoke;
+    margin-bottom: 5px; 
+    transition: .5s; 
+    
 }
 
-.menu--item a{
-    justify-self: flex-start;
+.menu--item:hover{
+    background-color:#030f40 ;
+}
+
+
+.link--menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none ;
     width: 150px;
-    text-decoration: none;
+    color: inherit;
+    height: 100%;   
+    width: 100%;
+    text-align: start;
 }
-
-
-
 
 /* End of navigator styles */
 
 .content{
     grid-area: content;
-    border: 1px solid darkgoldenrod;
-    background-color: palegoldenrod;
+
 }
 
 .footer{
     grid-area: footer;
-    border: 1px solid green;
-    background-color: palegreen;
+    background-color: black;
+    color: ivory;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ibm_footer{
+    height: 30px;
 }
