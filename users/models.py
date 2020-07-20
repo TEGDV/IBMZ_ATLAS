@@ -8,7 +8,7 @@ class EmployeeProfile(models.Model):
     website = models.URLField(max_length=200,blank=True)
     biography = models.TextField(max_length=200,blank=True)
     resume = models.FileField(upload_to='users/static/files', blank=True, null=True)
-    phone_number = models.SlugField()
+    phone_number = models.CharField(max_length=50, blank=True,null=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
