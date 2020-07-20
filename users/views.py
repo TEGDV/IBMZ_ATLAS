@@ -2,13 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 def login(request):
-    pass
+    return render(request, 'users/login.html')
 
 def register(request):
-    pass
+    return render(request, 'users/register.html')
 
 def home(request):
-    pass
+    return render(request, 'users/home.html')
 
 def profile(request):
-    pass
+    return render(request, 'users/profile.html')
