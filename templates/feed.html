@@ -1,37 +1,16 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>IBMZ - ATLAS</title>
+    <title>IBMZ ATLAS SIGN UP</title>
 </head>
-
 <body>
-    <div class="logo">
-       
-            <img src="{% static 'app_images/header_logo.png' %}" alt="">
-        
-    </div>
-
-    <header class="header">
-
-        {% include 'nav_header.html' %}
-    </header>
-    <section class="menu">
-        {% include 'nav_menu.html' %}
-    </section>
-    <section class="content">
-
-        {% block content %}
-        {% endblock  %}
-
-    </section>
+    {% block content %}
+    {% endblock%}
     <footer class="footer"><h4>Made it with <span>&#128150;</span> by Jair Aguilar Peña for </h4> <img src="{% static 'app_images/footer_logo.png' %}" class="ibm_footer" alt=""></footer>
 </body>
-
 </html>
