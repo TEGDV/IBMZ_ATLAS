@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 100px auto 50px;
+  grid-template-areas:
+      ". ."
+      "content content"
+      "footer footer";
+      background-color: #03002d ;
+      background-image: linear-gradient(to top left, white -59%, #030f40 50% , white 5% , #030f405d 44%);
+}
+
+
+/* Here start the auth container */
+
+.auth_container{
+  grid-area:content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.form_fields{
+
+  display:flex;
+  flex-direction: column;
+
+}
+.form--button {
+  height: 40px;
+  width:125px;
+  background-color: rgba(255,255,255,.1);
+  border:none;
+}
+
+.form--item{
+  margin-bottom: 10px;
+  height: 40px;
+  width: 300px;
+  background-color: rgba(255,255,255,.1);
+  border:none;
+  color: white;
+}
+
+
+/* here end the auth container*/
+
+.footer{
+    grid-area: footer;
+    background-color: black;
+    color: ivory;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ibm_footer{
+    height: 30px;
+}

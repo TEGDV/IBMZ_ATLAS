@@ -1,5 +1,32 @@
 {% extends 'feed.html' %}
 {% load static %}
 {% block content %}
-    <h1>Soy el login</h1>
+<section class="auth_container">
+
+    <div class="image_container">
+      <img src="{% static 'app_images/header_logo.png'%}" alt="">
+    </div>
+
+    {% if error %}
+      <p style='color:red;'>{{ error }}</p>
+    {% endif %}
+    
+    <div class="form_container">
+      <form class="form" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="form_fields">
+          <input class="form--item" type="text" name="username" placeholder="Username">
+          <input class="form--item" type="password" name="password" placeholder="password">
+        </div>
+        <button class='form--button' type="submit" name="button">Sign In</button>
+        <div class="form_features">
+          <input type="checkbox" name="" value="">Remember me</input>
+          <a href="#">I forgot my password</a>
+        </div>
+      </form>
+    </div>
+
+</section>
+
 {% endblock %}
