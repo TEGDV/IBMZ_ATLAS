@@ -7,14 +7,14 @@
       <img src="{% static 'app_images/header_logo.png'%}" alt="">
     </div>
 
-    {% if error %}
-      <p style='color:red;'>{{ error }}</p>
-    {% endif %}
+
     
     <div class="form_container">
       <form class="form" action="{% url 'login' %}" method="POST">
         {% csrf_token %}
-
+        {% if error %}
+            <p style='color:red;'>{{ error }}</p>
+        {% endif %}
         <div class="form_fields">
           <input class="form--item" type="text" name="username" placeholder="Username">
           <input class="form--item" type="password" name="password" placeholder="password">

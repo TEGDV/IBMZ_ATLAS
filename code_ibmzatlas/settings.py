@@ -131,3 +131,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join (BASE_DIR, "static"), '/ Var/www/static /',]
+
+LOGIN_URL = 'login'
