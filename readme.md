@@ -11,7 +11,7 @@ The some views about the app working
 ![Profile Page](asdfasdfsadf)
 
 # Documents
-To learn all about the project visit the Notion Documentation [here](notion.com)
+To learn all about the project visit the Notion Documentation [here](https://www.notion.so/IBM-Z-Project-Atlas-9aac5e61a22b4e9a81db7a87a948bb1e)
 > *The Project was called ATLAS due to the Greek God that was punished by Zeus to carry the sky over his shoulder  for the eternity at the same the word was commonly used to refer a some document that store information like maps and chars into it.*
 
 # Installation

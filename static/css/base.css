@@ -128,3 +128,8 @@ body {
 .ibm_footer{
     height: 30px;
 }
+
+.working img{
+    width: 500px;
+    height: 400px;
+}
