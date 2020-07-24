@@ -6,13 +6,13 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 100px auto 50px;
+  grid-template-rows: 50px auto 50px;
   grid-template-areas:
       ". ."
       "content content"
       "footer footer";
       background-color: #03002d ;
-      background-image: linear-gradient(to top left, white -59%, #03002d 50% , white 5% , #03002d 44%);
+      background-image: linear-gradient(to top left,#061f80 3%, #03002d 40%,black 41% , black 0%, #03002d 60%, #061f80 100%);
 }
 
 
@@ -43,18 +43,32 @@ body {
 .form--button {
   height: 40px;
   width:125px;
-  background-color: rgba(255,255,255,.1);
+  background-color: rgba(255,255,255,.4);
   border:none;
+  color:white;
 }
 
 .form--item{
   margin-bottom: 10px;
   height: 40px;
   width: 300px;
-  background-color: rgba(255,255,255,.1);
+  background-color: rgba(255,255,255,.2);
   border:none;
-  color: white;
+  
   padding-left: 10px;
+}
+
+.form_features{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: whitesmoke;
+  width: 300px;
+}
+
+.form_features--forgot{
+  color: aliceblue;
 }
 
 

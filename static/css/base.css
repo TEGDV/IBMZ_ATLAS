@@ -113,7 +113,9 @@ body {
 
 .content{
     grid-area: content;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer{
@@ -128,3 +130,4 @@ body {
 .ibm_footer{
     height: 30px;
 }
+
