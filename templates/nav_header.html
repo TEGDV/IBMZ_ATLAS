@@ -3,18 +3,18 @@
 
 <div class="user">
     <figure class="user_picture">
-        <img src="https://i.imgur.com/HSwjPKQ.jpg" alt="">
+        <a href="{% url 'profile' %}"><img src="https://i.imgur.com/HSwjPKQ.jpg" alt=""></a>
     </figure>
     <div class="user_info">
         <p class="user_info--item">Test Analizer</p>
         <p class="user_info--item">Turno Nocturno</p>
         <p class="user_info--item">apjair@gmail.com</p>
     </div>
-    <a href="">
+    <a href="{% url 'notifications' %}">
         <i class="fa fa-bell fa-2x"></i>
     </a>
     
-    <a href="">
+    <a href="{% url 'settings' %}">
         <i class="fa fa-cog fa-2x"></i>
     </a>
     

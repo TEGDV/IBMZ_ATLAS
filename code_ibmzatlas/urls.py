@@ -13,4 +13,10 @@ urlpatterns = [
     path('account/register/',users_views.register, name='register'),
     path('account/home',users_views.home, name='home'),
     path('account/profile',users_views.profile, name='profile'),
+    path('account/notifications',users_views.profile, name='notifications'),
+    path('account/status',users_views.profile, name='status'),
+    path('account/team',users_views.profile, name='team'),
+    path('account/manuals',users_views.profile, name='manuals'),
+    path('account/error',users_views.profile, name='error'),
+   
 ]

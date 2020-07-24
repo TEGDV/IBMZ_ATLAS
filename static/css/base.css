@@ -113,7 +113,9 @@ body {
 
 .content{
     grid-area: content;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer{
@@ -129,7 +131,3 @@ body {
     height: 30px;
 }
 
-.working img{
-    width: 500px;
-    height: 400px;
-}
