@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Local APPs
-    'posts',
-    'references',
+    'features',
     'users',
 ]
 

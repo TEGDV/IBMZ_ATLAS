@@ -33,3 +33,11 @@ def home(request):
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+@login_required
+def settings(request):
+    return render(request, 'users/settings.html')
+
+@login_required
+def notifications(request):
+    return render(request, 'users/notifications.html')
