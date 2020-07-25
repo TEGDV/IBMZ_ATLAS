@@ -4,7 +4,7 @@ IBMZ: Atlas is a project made it to learn how to manipulate Python + Django, thi
 # Preview
 The some views about the app working
 ## Home Page
-![Home Page](asdasd)
+![Home Page](https://res.cloudinary.com/tegdv97/image/upload/v1595635835/localhost_8000_account_references__s9b0jv.png)
 ## Login
 ![Login Page](https://res.cloudinary.com/tegdv97/image/upload/v1595635543/localhost_8000_login__dscevg.png)
 ## Profile
