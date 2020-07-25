@@ -6,7 +6,7 @@ The some views about the app working
 ## Home Page
 ![Home Page](asdasd)
 ## Login
-![Login Page](sadfasdf)
+![Login Page](https://res.cloudinary.com/tegdv97/image/upload/v1595635543/localhost_8000_login__dscevg.png)
 ## Profile
 ![Profile Page](asdfasdfsadf)
 
