@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9310kaui9lo78',
-        'USER': 'yydpkdkxucmivk',
-        'PASSWORD': 'd1280a20e1c0f52b3596d21e3194120e4c5fcdf266db0440630ba80035e74587',
-        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'h686ogl6hb0wrmdr',
+        'USER': 'kqijjdc69sadukah',
+        'PASSWORD': 'no469dp6ts9ggb1s',
+        'HOST': 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
         'CONN_MAX_AGE': 500
     }
 }
