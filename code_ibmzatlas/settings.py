@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
+import urllib.parse as up
+import psycopg2
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -84,7 +87,16 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {'default': dj_database_url.config(default='postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz')}
+DATABASE_URL = 'postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz'
 
+up.uses_netloc.append("postgres")
+url = up.urlparse(os.environ["DATABASE_URL"])
+conn = psycopg2.connect(database=url.path[1:],
+user=url.username,
+password=url.password,
+host=url.hostname,
+port=url.port
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
