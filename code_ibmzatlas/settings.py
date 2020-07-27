@@ -83,10 +83,8 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {'default': dj_database_url.config(default='postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz')}
 
-}
-DATABASES['default'] = dj_database_url.config(default='postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
