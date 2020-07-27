@@ -84,17 +84,9 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'h686ogl6hb0wrmdr',
-        'USER': 'kqijjdc69sadukah',
-        'PASSWORD': 'no469dp6ts9ggb1s',
-        'HOST': 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT': 3306,
-        'CONN_MAX_AGE': 500
-    }
+
 }
-DATABASES['default'] = dj_database_url.config(default='mysql://kqijjdc69sadukah:no469dp6ts9ggb1s@un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/h686ogl6hb0wrmdr')
+DATABASES['default'] = dj_database_url.config(default='postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
