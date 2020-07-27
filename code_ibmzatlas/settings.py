@@ -90,7 +90,7 @@ DATABASES = {'default': dj_database_url.config(default='postgres://gxsgdbkz:I7CC
 DATABASE_URL = 'postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz'
 
 up.uses_netloc.append("postgres")
-url = up.urlparse(os.environ["DATABASE_URL"])
+url = up.urlparse(DATABASE_URL)
 conn = psycopg2.connect(database=url.path[1:],
 user=url.username,
 password=url.password,
