@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9310kaui9lo78',
-        'USER': 'yydpkdkxucmivk',
-        'PASSWORD': 'd1280a20e1c0f52b3596d21e3194120e4c5fcdf266db0440630ba80035e74587',
-        'HOST': 'ec2-54-197-254-117.compute-1.amazonaws.com',
+        'NAME': 'ATLASDB',
+        'USER': 'TEGDV',
+        'PASSWORD': '@TEGDEV@',
+        'HOST': 'db',
         'PORT': 5432,
         'CONN_MAX_AGE': 500
     }
