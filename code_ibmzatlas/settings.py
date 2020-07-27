@@ -14,7 +14,7 @@ import os
 import django_heroku
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(default='mysql://kqijjdc69sadukah:no469dp6ts9ggb1s@un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/h686ogl6hb0wrmdr'}
+DATABASES['default'] = dj_database_url.config(default='mysql://kqijjdc69sadukah:no469dp6ts9ggb1s@un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/h686ogl6hb0wrmdr')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
