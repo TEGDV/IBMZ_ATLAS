@@ -1,3 +1,5 @@
 django
 psycopg2-binary>=2.8
 pillow==6.2.2
+gunicorn
+django-heroku
