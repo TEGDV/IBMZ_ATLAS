@@ -14,7 +14,7 @@ import os
 import django_heroku
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config(default='mysql://kqijjdc69sadukah:no469dp6ts9ggb1s@un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/h686ogl6hb0wrmdr')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -83,8 +83,18 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'h686ogl6hb0wrmdr',
+        'USER': 'kqijjdc69sadukah',
+        'PASSWORD': 'no469dp6ts9ggb1s',
+        'HOST': 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
+        'CONN_MAX_AGE': 500
+    }
+}
+DATABASES['default'] = dj_database_url.config(default='mysql://kqijjdc69sadukah:no469dp6ts9ggb1s@un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/h686ogl6hb0wrmdr')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
