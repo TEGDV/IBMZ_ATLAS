@@ -21,8 +21,8 @@ body {
 .auth_container{
   grid-area:content;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -54,7 +54,7 @@ body {
   width: 300px;
   background-color: rgba(255,255,255,.2);
   border:none;
-  
+
   padding-left: 10px;
 }
 

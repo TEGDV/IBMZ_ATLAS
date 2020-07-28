@@ -2,7 +2,23 @@
 {% extends 'feed.html' %}
 {% load static %}
 {% block content %}
-<div class="working">
-    <img height="400px" width="500px" src="{% static 'app_images/working.png' %}" alt="">
-</div>
+<section class="auth_container">
+
+    <div class="image_container">
+      <img src="{% static 'app_images/lettersibmz.png'%}" alt="">
+    </div>
+
+
+
+    <div class="form_container">
+      <form class="form" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {% if error %}
+            <p style='color:red;'>{{ error }}</p>
+        {% endif %}
+
+      </form>
+    </div>
+
+</section>
 {% endblock content %}
