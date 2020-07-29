@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>@{{ request.user.username }} | Update profile</title>
+    <title>@{{ user.username }} | Update profile </title>
 {% endblock %}
 
 {% block content %}
-  <h1> @{{ request.user.username }} </h1>
+<div class="profile_info">
+
+  <h1> @{{ profile.picture.url }} </h1>
+</div>
+  
 {% endblock %}

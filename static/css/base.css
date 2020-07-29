@@ -110,14 +110,17 @@ body {
 }
 
 /* End of navigator styles */
-
+/* CONTENT START */
 .content{
     grid-area: content;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ivory;
 }
+/* CONTENT END */
 
+/* FOOTER */
 .footer{
     grid-area: footer;
     background-color: black;

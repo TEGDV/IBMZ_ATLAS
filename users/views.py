@@ -6,9 +6,18 @@ from django.contrib.auth.models import User
 from users.models import EmployeeProfile
 # Create your views here.
 
-
+@login_required
 def update_profile(request):
-    return render(request, 'users/update_profile.html')
+    profile = request.user.employeeprofile
+
+    return render(
+        request=request,
+        template_name='users/update_profile.html',
+        context={
+            'profile':profile,
+            'user':request.user
+        }
+    )
 
 def login_view(request):
     logout(request)
@@ -48,7 +57,7 @@ def register(request):
 
             profile = EmployeeProfile(user=user)
             profile.save()
-            
+
             return redirect('login')
     
     except IntegrityError:
