@@ -1,13 +1,58 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block head %}
-    <title>@{{ user.username }} | Update profile </title>
+<title>@{{ user.username }} | Update profile </title>
 {% endblock %}
 
 {% block content %}
 <div class="profile_info">
-
-  <h1> @{{ profile.picture.url }} </h1>
-</div>
   
+    <form action="{% url 'update' %}" method="POST" enctype="multipart/form-data">
+
+      <div class="media">
+        {% if profile.picture %}
+            <img src="{{ profile.picture.url }}"  height="50" />
+        {% else%}
+            <img src="{% static 'pictures/default.png' %}"  height="50" />
+        {% endif %}
+
+        <div class="media-body">
+            <h5 >@{{ user.username }} | {{ user.get_full_name }}</h5>
+            <p ><input type="file" name="picture" required="true"></p>
+        </div>
+    </div>
+
+      <div class="form-group">
+        <label>Website</label>
+        <input class="form-control" type="url" name="website" placeholder="Website" value="{{ profile.website }}" />
+      </div>
+
+      <div class="form-group">
+        <label>Biography</label>
+        <textarea class="form-control" name="biography">{{ profile.biography }}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Phone number</label>
+        <input class="form-control" type="text" name="phone_number" placeholder="Phone number"
+          value="{{ profile.phone_number }}" />
+      </div>
+
+
+
+
+
+
+      {% if error %}
+      <script>
+
+        function alertUser() {
+          alert('{{ error }}');
+        };
+      </script>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
 {% endblock %}

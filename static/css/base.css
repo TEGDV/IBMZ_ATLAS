@@ -118,6 +118,14 @@ body {
     align-items: center;
     background-color: ivory;
 }
+
+.profile_info{
+    min-width: 320px;
+    max-width: 720px;
+    
+    border: red solid 2px;
+}
+
 /* CONTENT END */
 
 /* FOOTER */
