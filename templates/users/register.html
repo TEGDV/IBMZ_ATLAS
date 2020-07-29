@@ -1,24 +1,42 @@
-
 {% extends 'feed.html' %}
 {% load static %}
 {% block content %}
 <section class="auth_container">
 
-    <div class="image_container">
-      <img src="{% static 'app_images/lettersibmz.png'%}" alt="">
-    </div>
+  <div class="image_container">
+    <img src="{% static 'app_images/lettersibmz.png'%}" alt="">
+  </div>
 
 
 
-    <div class="form_container">
-      <form class="form" action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
-        {% if error %}
-            <p style='color:red;'>{{ error }}</p>
-        {% endif %}
+  <div class="form_container">
+    <form class="form" action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
 
-      </form>
-    </div>
+      <div class="form_fields--register">
+        <input class="form--item" type="text" name="username" placeholder="Username" required='true'>
+        <input class="form--item" type="password" name="password" placeholder="password" required='true'>
+        <input class="form--item" type="password" name="password_confirmation" placeholder="password confirmation"
+          required='true'>
+        <input class="form--item" type="text" name="first_name" placeholder="firstname" required='true'>
+        <input class="form--item" type="text" name="last_name" placeholder="lastname" required='true'>
+        <input class="form--item" type="text" name="email" placeholder="email" required='true'>
+        <div class="form_features">
+          <button class='form--button' type="submit" name="button">Register</button>
+          <a href="{% url 'login' %}"> return to login page</a>
+        </div>
+        
+      </div>
+      {% if error %}
+        <script>
+          
+          function alertUser(){
+            alert('{{ error }}');
+          };
+        </script>
+      {% endif %}
+    </form>
+  </div>
 
 </section>
 {% endblock content %}

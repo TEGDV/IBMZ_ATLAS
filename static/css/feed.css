@@ -27,19 +27,41 @@ body {
 }
 
 .form{
-  width: 400px;
-  height: 400px;
+  
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
+.button_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.button_container a{
+  color: whitesmoke;
+}
+
 .form_fields{
 
   display:flex;
   flex-direction: column;
 
 }
+
+.form_fields--register{
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
 .form--button {
   height: 40px;
   width:125px;
@@ -59,12 +81,12 @@ body {
 }
 
 .form_features{
-  height: 30px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: whitesmoke;
-  width: 300px;
+  width: 100%;
 }
 
 .form_features--forgot{
