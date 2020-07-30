@@ -11,18 +11,20 @@ from users.forms import EmployeeProfileUpdateForm
 def update_profile(request):
     profile = request.user.employeeprofile
     if request.method == 'POST':
-        print('Its POST')
+
         form = EmployeeProfileUpdateForm(request.POST, request.FILES)
-        print(form.is_valid())
         if form.is_valid():
-            print('it works')
-            print(form.cleaned_data)
-            
-        else: 
-            form = EmployeeProfileUpdateForm()
-            print('not works')
-            
-    
+            data = form.cleaned_data
+            if data['picture']:
+                print('No upload picture')
+            if data['resume']:
+                print('No upload resume')
+
+    else:
+        form = EmployeeProfileUpdateForm()
+        print('not works')
+
+
     return render(
         request=request,
         template_name='users/update_profile.html',
@@ -59,7 +61,7 @@ def register(request):
         if request.method == 'POST':
             username = request.POST['username']
             password = request.POST['password']
-            password_confirmation = request.POST['password_confirmation']    
+            password_confirmation = request.POST['password_confirmation']
             if password != password_confirmation:
                 return render(request,'users/register.html',{'error':'Confirmation password does not match'})
 
@@ -73,7 +75,7 @@ def register(request):
             profile.save()
 
             return redirect('login')
-    
+
     except IntegrityError:
         return render(request,'users/register.html',{'error':'This user already exist, try with other'})
 
