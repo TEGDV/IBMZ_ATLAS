@@ -4,18 +4,32 @@ from django.contrib.auth.decorators import login_required
 from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
 from users.models import EmployeeProfile
+from users.forms import EmployeeProfileUpdateForm
 # Create your views here.
 
 @login_required
 def update_profile(request):
     profile = request.user.employeeprofile
-
+    if request.method == 'POST':
+        print('Its POST')
+        form = EmployeeProfileUpdateForm(request.POST, request.FILES)
+        print(form.is_valid())
+        if form.is_valid():
+            print('it works')
+            print(form.cleaned_data)
+            
+        else: 
+            form = EmployeeProfileUpdateForm()
+            print('not works')
+            
+    
     return render(
         request=request,
         template_name='users/update_profile.html',
         context={
-            'profile':profile,
-            'user':request.user
+            'profile': profile,
+            'user': request.user,
+            'form': form,
         }
     )
 

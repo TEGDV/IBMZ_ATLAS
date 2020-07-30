@@ -17,7 +17,7 @@ urlpatterns = [
     path('account/profile',users_views.profile, name='profile'),
     path('account/notifications',users_views.profile, name='notifications'),
     path('account/settings',users_views.settings, name='settings'),
-    path('account/me/update',users_views.update_profile, name='update'),
+    path('account/profile/update',users_views.update_profile, name='update'),
 
     # Features views
 

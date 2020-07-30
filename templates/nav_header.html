@@ -6,9 +6,9 @@
         <a href="{% url 'profile' %}"><img src="{% static 'pictures/default.png'%}" alt=""></a>
     </figure>
     <div class="user_info">
-        <p class="user_info--item">Test Analizer</p>
-        <p class="user_info--item">Turno Nocturno</p>
-        <p class="user_info--item">apjair@gmail.com</p>
+        <p class="user_info--item">{{ profile.position }}</p>
+        <p class="user_info--item">{{ profile.shift }}</p>
+        <p class="user_info--item">{{ user.email }}</p>
     </div>
     <a href="{% url 'notifications' %}">
         <i class="fa fa-bell fa-2x"></i>
