@@ -4,7 +4,7 @@ from features.models import Refcode, Post
 @admin.register(Refcode)
 class RefCodeAdmin(admin.ModelAdmin):
     #Profile admin
-    pass
+    list_display = ('pk','ref_code','system_number','created_by')
 
 
 # Register your models here.

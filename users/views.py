@@ -15,11 +15,14 @@ def update_profile(request):
         form = EmployeeProfileUpdateForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
+            print(data)
             if data['picture']:
-                print('No upload picture')
+                profile.picture = data['picture']
             if data['resume']:
-                print('No upload resume')
+                profile.resume = data['resume']
 
+            profile.save()
+            return  redirect('profile')
     else:
         form = EmployeeProfileUpdateForm()
         print('not works')
@@ -79,20 +82,25 @@ def register(request):
     except IntegrityError:
         return render(request,'users/register.html',{'error':'This user already exist, try with other'})
 
-    return render(request, 'users/register.html')
+    return render(request, 'users/register.html', { 'profile' : profile })
 
 @login_required
 def home(request):
-    return render(request, 'users/home.html')
+    profile = request.user.employeeprofile
+    return render(request, 'users/home.html', { 'profile' : profile })
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    profile = request.user.employeeprofile
+    print(profile)
+    return render(request, 'users/profile.html', { 'profile' : profile })
 
 @login_required
 def settings(request):
-    return render(request, 'users/settings.html')
+    profile = request.user.employeeprofile
+    return render(request, 'users/settings.html', { 'profile' : profile })
 
 @login_required
 def notifications(request):
-    return render(request, 'users/notifications.html')
+    profile = request.user.employeeprofile
+    return render(request, 'users/notifications.html', { 'profile' : profile })

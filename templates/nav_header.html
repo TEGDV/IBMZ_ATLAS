@@ -3,7 +3,7 @@
 
 <div class="user">
     <figure class="user_picture">
-        <a href="{% url 'profile' %}"><img src="{% static 'pictures/default.png'%}" alt=""></a>
+        <a href="{% url 'profile' %}"><img src="/{{ profile.picture.url }}" alt=""></a>
     </figure>
     <div class="user_info">
         <p class="user_info--item">{{ profile.position }}</p>
@@ -13,11 +13,11 @@
     <a href="{% url 'notifications' %}">
         <i class="fa fa-bell fa-2x"></i>
     </a>
-    
+
     <a href="{% url 'settings' %}">
         <i class="fa fa-cog fa-2x"></i>
     </a>
-    
+
 
     <a href="{% url 'logout' %}">
         <i class="fa fa-sign-out fa-2x"></i>

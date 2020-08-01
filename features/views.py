@@ -1,33 +1,46 @@
 from django.shortcuts import render
 
 # Create your views here.
+from features.models import Refcode
 from django.contrib.auth.decorators import login_required
 
 @login_required
 def references_db(request):
-    return render(request, 'features/reference.html')
+    profile = request.user.employeeprofile
+    refcodes = list(Refcode.objects.all().order_by('ref_code'))
+    print(refcodes)
+    return render(request, 'features/reference.html', {
+    'profile' : profile,
+    'refcodes' : refcodes
+        }
+     )
 
 @login_required
 def list_post(request):
     #
-    return render(request, 'feed.html')
+    profile = request.user.employeeprofile
+    return render(request, 'features/blog.html' , { 'profile' : profile })
 
 @login_required
 def status(request):
     #
-    return render(request, 'feed.html')
+    profile = request.user.employeeprofile
+    return render(request, 'features/status.html', { 'profile' : profile })
 
 @login_required
 def teamz(request):
     #
-    return render(request, 'feed.html')
+    profile = request.user.employeeprofile
+    return render(request, 'features/teamz.html', { 'profile' : profile })
 
 @login_required
 def manuals(request):
     #
-    return render(request, 'feed.html')
+    profile = request.user.employeeprofile
+    return render(request, 'features/manuals.html', { 'profile' : profile })
 
 @login_required
 def vocabulary(request):
     #
-    return render(request, 'feed.html')
+    profile = request.user.employeeprofile
+    return render(request, 'features/vocabulary.html', { 'profile' : profile })

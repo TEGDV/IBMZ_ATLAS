@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="working">
-    <img height="400px" width="500px" src="{% static 'app_images/working.png' %}" alt="">
+<div class="table_refcode">
+  <table>
+      <tr class="table-row">
+          <th>REFCODE</th>
+          <th>SYSTEM_NUMBER</th>
+          <th>OPERATION</th>
+          <th>OPERATION NAME</th>
+          <th>MESSAGE</th>
+          <th>ACTIONS</th>
+          <th>CREATED BY</th>
+      </tr>
+      {% for refcode in refcodes %}
+      <tr class="table-row">
+          <td>{{ refcode.ref_code }}</td>
+          <td>{{ refcode.system_number }}</td>
+          <td>{{ refcode.operation_number }}</td>
+          <td>{{ refcode.operation_name }}</td>
+          <td>{{ refcode.hmdescription }}</td>
+          <td>{{ refcode.fix_action }}</td>
+          <td>{{ refcode.created_by }}</td>
+
+      </tr>
+      {% endfor %}
+  </table>
 </div>
+
 {% endblock content %}
