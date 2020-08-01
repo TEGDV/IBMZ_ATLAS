@@ -11,14 +11,14 @@
     {% csrf_token %}
     <div class="media">
       {% if profile.picture %}
-      <img src="/{{ profile.picture.url }}" height="50" />
+      <img src="/{{ profile.picture.url }}" height="100" />
       {% else%}
       <img src="{% static '/pictures/default.png' %}" height="50" />
       {% endif %}
 
       <div class="media-body">
-        <h5>@{{ user.username }} | {{ user.get_full_name }}</h5>
-        <p><input type="file" name="picture"></p>
+        <h5 class="field">@{{ user.username }} | {{ user.get_full_name }}</h5>
+        <p class="field"><input type="file" name="picture"></p>
       </div>
     </div>
     <div class="form-group">
@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
       <label>Professional Resume</label>
-      <p><input type="file" name="resume"></p>
+      <p class="field"><input type="file" name="resume"></p>
     </div>
     <div class="form-group">
       <label>Phone number</label>
