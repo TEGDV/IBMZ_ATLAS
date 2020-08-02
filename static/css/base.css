@@ -249,6 +249,7 @@ body {
     justify-content: space-between;
     grid-gap: 50px;
     margin: 50px;
+    width: 90%;
     grid-template-areas: "biography biography";
 }
 .profile_content--biography{
@@ -259,6 +260,45 @@ body {
     width: 100%;
     padding-top: 10px;
     font-size: 14px;
+}
+
+.edit-profile-button{
+    all:unset;
+    border: solid white 1px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: rgba(0, 128, 128, 0.219);
+    padding: 5px;
+}
+
+.edit-profile-button a{
+    all:unset;
+    height: 100%;
+    width: 100%;
+    transition: 2s;
+
+}
+
+.edit-profile-button:hover{
+ background-color: teal;
+ cursor: pointer;
+
+}
+
+.content_references{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 90%;
+    width: 90%;
+}
+
+.table_button {
+    all: unset;
+    padding: 5px 10px;
+    color: white;
+    border: solid whitesmoke 1px;
 }
 
 /* CONTENT END */
