@@ -127,7 +127,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
 
-    width: 60%;
+    
     min-width: 240px;
 }
 .form-group {
@@ -228,11 +228,37 @@ body {
 
 .table_refcode table th{
   background-color: rgba(255,255, 255, .2);
-  padding: 0 5px
+  padding: 0 5px;
+
 }
+
 
 .table-row{
   color: white;
+  font-size: 14px;
+  
+}
+
+.table-row td{
+    font-size: 14px;
+  }
+
+.profile_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-gap: 50px;
+    margin: 50px;
+    grid-template-areas: "biography biography";
+}
+.profile_content--biography{
+    grid-area: biography;
+}
+.profile_content p {
+    border-top: white solid 1px;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 14px;
 }
 
 /* CONTENT END */

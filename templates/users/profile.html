@@ -1,7 +1,36 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
+{% block head %}
+<title>@{{ user.username }} | Update profile </title>
+{% endblock %}
+
 {% block content %}
-<div class="working">
-    <img height="400px" width="500px" src="{% static 'app_images/working.png' %}" alt="">
+<div class="profile_info">
+    <div class="media">
+        {% if profile.picture %}
+        <img src="/{{ profile.picture.url }}" height="100" />
+        {% else%}
+        <img src="{% static '/pictures/default.png' %}" height="50" />
+        {% endif %}
+
+        <div class="media-body">
+            <h5 class="field">@{{ user.username }} | {{ user.get_full_name }}</h5>
+        </div>
+    </div>
+    <div class="profile_content">
+        <div class="profile_content--biography">
+            <label for="{{ profile.biography }}">Biography</label>
+            <p>{{ profile.biography }}</p>
+        </div>
+        <div >
+            <label for="{{ profile.biography }}">Biography</label>
+            <p>{{ profile.biography }}</p>
+        </div>
+
+
+            
+        
+    </div>
 </div>
-{% endblock content %}
+
+{% endblock %}

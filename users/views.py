@@ -20,6 +20,11 @@ def update_profile(request):
                 profile.picture = data['picture']
             if data['resume']:
                 profile.resume = data['resume']
+            profile.biography = data['biography']
+            profile.position = data['position']
+            profile.shift = data['shift']
+            profile.website = data['website']
+            profile.phone_number = data['phone_number']
 
             profile.save()
             return  redirect('profile')
@@ -82,7 +87,7 @@ def register(request):
     except IntegrityError:
         return render(request,'users/register.html',{'error':'This user already exist, try with other'})
 
-    return render(request, 'users/register.html', { 'profile' : profile })
+    return render(request, 'users/register.html')
 
 @login_required
 def home(request):
