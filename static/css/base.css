@@ -90,12 +90,13 @@ body {
 
     color: whitesmoke;
     margin-bottom: 5px;
-    transition: .5s;
+
 
 }
 
 .menu--item:hover{
     background-color:#030f40 ;
+    transition: .5s;
 }
 
 
@@ -232,6 +233,7 @@ body {
 
 }
 
+
 .table_inputs {
     height: 50px;
     display: flex;
@@ -240,10 +242,39 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
-
+.search_bar{
+  width: 420px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
 .search_button{
-  background-color: pink;
-  height: 100%;
+  background-color:rgba(255,255, 255, .2);
+  padding: 5px 20px;
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.search_button:hover {
+  cursor: pointer;
+  background-color:rgba(255,255, 255, .3);
+  transition: .2s;
+}
+
+.table_button {
+    all: unset;
+    padding: 5px 10px;
+    color: white;
+    border: solid whitesmoke 1px;
+    margin:0 5px;
+
+}
+
+.table_button:hover {
+  cursor: pointer;
+  background-color:rgba(255,255, 255, .3);
+  transition: .2s;
+
 }
 
   /* Ends of references styles */
@@ -310,12 +341,6 @@ body {
     width: 90%;
 }
 
-.table_button {
-    all: unset;
-    padding: 5px 10px;
-    color: white;
-    border: solid whitesmoke 1px;
-}
 
 /* CONTENT END */
 
