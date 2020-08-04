@@ -5,13 +5,13 @@
 <div class="content_references">
     <div class="table_inputs">
         <input class='search_bar' type="text" name="search" >
-        <input class='references_button' type="submit" value="Search">
+        <input class='search_button' type="submit" value="Search">
         <a class='table_button'href="">NEW</a>
         <a class='table_button'href="">UPDATE</a>
         <a class='table_button'href="">DELETE</a>
     </div>
     <div class="table_refcode">
-    
+
       <table>
           <tr class="table-row">
               <th>REFCODE</th>
@@ -31,7 +31,7 @@
               <td>{{ refcode.hmdescription }}</td>
               <td>{{ refcode.fix_action }}</td>
               <td>{{ refcode.created_by }}</td>
-    
+
           </tr>
           {% endfor %}
       </table>
