@@ -6,7 +6,7 @@
     <div class="table_inputs">
         <input class='search_bar' type="text" name="search" >
         <input class='search_button' type="submit" value="Search">
-        <a class='table_button' onclick="addNew()">NEW</a>
+        <a class='table_button' onclick="openAddForm()">NEW</a>
         <a class='table_button'href="">UPDATE</a>
         <a class='table_button'href="">DELETE</a>
     </div>
@@ -44,9 +44,15 @@
 </div>
 
 <script>
-  function addNew(){
+  function openAddForm(){
     console.log('hello world')
+    document.getElementById("addform").style.display = "block";
   };
+
+  function closeAddForm(){
+    document.getElementById("addform").style.display = "none";
+
+  }
 </script>
 
 {% endblock content %}

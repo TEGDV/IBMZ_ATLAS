@@ -12,18 +12,29 @@ def references_db(request):
     refcodes = list(Refcode.objects.all().order_by('ref_code'))
     if request.method == 'POST':
         form = NewRefcodeForm(request.POST)
+        print(form.cleaned_data)
         if form.is_valid():
             data = form.cleaned_data
-            refcode = Refcode.create()
-            refcode.ref_code = data['ref_code']
-            refcode.system_number = data['system_number']
-            refcode.operation_number = data['operation_number']
-            refcode.operation_name = data['operation_name']
-            refcode.hmdescription = data['hmdescription']
-            refcode.fix_action = data['fix_action']
+            refcode = Refcode(
+                
+                ref_code = data['ref_code'],
+                system_number = data['system_number'],
+                operation_number = data['operation_number'],
+                operation_name = data['operation_name'],
+                hmdescription = data['hmdescription'],
+                fix_action = data['fix_action']
+            )
 
             refcode.save()
             return redirect('reftable')
+        else:
+            form = NewRefcodeForm()
+            return render(request, 'features/reference.html', {
+            'profile' : profile,
+            'refcodes' : refcodes,
+            'error': 'something wrong with POST'
+                }
+             )
 
 
     return render(request, 'features/reference.html', {
