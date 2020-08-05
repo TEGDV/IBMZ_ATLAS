@@ -6,14 +6,16 @@
     <div class="table_inputs">
         <input class='search_bar' type="text" name="search" >
         <input class='search_button' type="submit" value="Search">
-        <a class='table_button'href="">NEW</a>
+        <a class='table_button' onclick="addNew()">NEW</a>
         <a class='table_button'href="">UPDATE</a>
         <a class='table_button'href="">DELETE</a>
     </div>
+    {% include 'features/addform.html' %}
     <div class="table_refcode">
 
       <table>
           <tr class="table-row">
+              <th>#</th>
               <th>REFCODE</th>
               <th>SYSTEM_NUMBER</th>
               <th>OPERATION</th>
@@ -24,6 +26,7 @@
           </tr>
           {% for refcode in refcodes %}
           <tr class="table-row">
+              <td>{{ refcode.pk }}</td>
               <td>{{ refcode.ref_code }}</td>
               <td>{{ refcode.system_number }}</td>
               <td>{{ refcode.operation_number }}</td>
@@ -36,7 +39,14 @@
           {% endfor %}
       </table>
     </div>
+
+
 </div>
 
+<script>
+  function addNew(){
+    console.log('hello world')
+  };
+</script>
 
 {% endblock content %}

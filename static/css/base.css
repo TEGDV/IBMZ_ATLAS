@@ -266,16 +266,26 @@ body {
     padding: 5px 10px;
     color: white;
     border: solid whitesmoke 1px;
-    margin:0 5px;
+    margin:0 6px;
 
 }
 
 .table_button:hover {
   cursor: pointer;
-  background-color:rgba(255,255, 255, .3);
+  background-color:rgba(255,255, 255, .4);
   transition: .2s;
 
 }
+
+      /* POP UPS*/
+      .container_add-form {
+        display:none;
+        position: fixed;
+        z-index: auto;
+        margin: 0 auto;
+        background-color: gray;
+
+      }
 
   /* Ends of references styles */
 
