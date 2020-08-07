@@ -1,6 +1,6 @@
 <div id="addform" class="container_add-form">
   <form class="add_form" action="{% url 'reftable' %}" method="POST">
-      {% csrf_token %}
+    {% csrf_token %}
     <div class="form-group">
       <label>Refcode</label>
       <input class="form-control" type="text" name="ref_code" placeholder="reference code" value="" required/>
@@ -8,17 +8,17 @@
 
     <div class="form-group">
       <label>System Number</label>
-      <input class="form-control" type="text" name="system_number" placeholder="" value="" required/>
+      <input class="form-control" type="text" name="system_number" required/>
     </div>
 
     <div class="form-group">
       <label>Operation</label>
-      <input class="form-control" type="text" name="operation_name" placeholder="" value="" required/>
+      <input class="form-control" type="text" name="operation_number" required/>
     </div>
 
     <div class="form-group">
       <label>Operation Name</label>
-      <input class="form-control" type="text" name="ref_code" placeholder="" value="" required/>
+      <input class="form-control" type="text" name="operation_name" required/>
     </div>
 
     <div class="form-group">
@@ -34,14 +34,14 @@
       <button id="submit_add" type="submit" class="form_button"> Add </button>
       <button id="cancel_add" type="button"class="form_button" onclick="closeAddForm()"> Cancel </button>
     </div>
-    {% if error %}
-      <script>
 
-        function alertUser(){
-          alert('{{ error }}');
-        };
-      </script>
-    {% endif %}
   </form>
+  {% if error %}
+  <script>
 
+    function alertUser(){
+      alert('{{ error }}');
+    };
+  </script>
+{% endif %}
 </div>
