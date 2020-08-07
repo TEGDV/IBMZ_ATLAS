@@ -8,7 +8,12 @@
         <input class='search_button' type="submit" value="Search">
         <a class='table_button' onclick="openAddForm()">NEW</a>
         <a class='table_button'href="">UPDATE</a>
-        <a class='table_button'href="">DELETE</a>
+        <form class='table_button' action="{% url 'deleterefcode' %}" method='POST'>
+          {% csrf_token %}
+          <input id="pk_value" type="hidden" name="pk" value=""/>
+          <button id="delete_button" class='delete_button' type="submit" disabled=True>DELETE</button>
+        </form>
+        
     </div>
     
     <div class="table_refcode">
@@ -25,7 +30,7 @@
               <th>CREATED BY</th>
           </tr>
           {% for refcode in refcodes %}
-          <tr class="table-row">
+          <tr class="table-row" onclick="enableDeleteButton()">
               <td>{{ refcode.pk }}</td>
               <td>{{ refcode.ref_code }}</td>
               <td>{{ refcode.system_number }}</td>
@@ -53,6 +58,36 @@
     document.getElementById("addform").style.display = "none";
 
   }
+  /* Clickeable table  code START */
+  var table = document.getElementsByTagName("table")[0];
+  var tbody = table.getElementsByTagName("tbody")[0];
+  tbody.onclick = function (e) {
+      e = e || window.event;
+      var data = [];
+      var target = e.srcElement || e.target;
+      while (target && target.nodeName !== "TR") {
+          target = target.parentNode;
+      }
+      if (target) {
+          var cells = target.getElementsByTagName("td");
+          for (var i = 0; i < cells.length; i++) {
+              data.push(cells[i].innerHTML);
+          }
+      }
+      pk_value = data[0];
+      document.getElementById("pk_value").value = pk_value;
+  };
+    // Enable Delete button when someone click a table row
+    function enableDeleteButton(){
+      if (document.getElementById("delete_button").disabled == true){
+        document.getElementById("delete_button").disabled = false;
+      }
+      else{
+        document.getElementById("delete_button").disabled = true;
+      }
+    }
+    
+  /* Clickeable table  code END*/
 </script>
 
 {% endblock content %}

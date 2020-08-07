@@ -359,6 +359,10 @@ body {
 
 }
 
+.delete_button{
+    all:unset;
+}
+
 .content_references{
     display: flex;
     flex-direction: column;

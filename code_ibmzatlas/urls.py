@@ -24,6 +24,7 @@ urlpatterns = [
     path('account/blog/', features_views.list_post, name='blog'),
     path('account/home',users_views.home, name='home'),
     path('account/references/', features_views.references_db, name='reftable'),
+    path('account/references/delete', features_views.deleteRefcode, name='deleterefcode'),
     path('account/status',features_views.status, name='status'),
     path('account/team',features_views.teamz, name='teamz'),
     path('account/manuals',features_views.manuals, name='manuals'),
