@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="working">
-    <img height="400px" width="500px" src="{% static 'app_images/working.png' %}" alt="">
+<div class="homepage">
+    <h1> Home Page</h1>
+    <div class="homepage_tips">
+        <h3>
+            lorem ips sum
+        </h3>
+        <div>
+            <h3>tips area</h3>
+        </div>
+        <div>
+            <h3>advices area</h3>
+        </div>
+    </div>
+
+    <div>
+        <!--For item in Advices-->
+        <div>
+            <label>DateTime</label>
+            <p>
+                advice content  ----Color----
+            </p>
+            <label>Created By</label>
+        </div>
+
+    </div>
 </div>
 {% endblock content %}
