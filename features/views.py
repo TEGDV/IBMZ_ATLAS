@@ -8,12 +8,25 @@ from features.forms import NewRefcodeForm
 
 @login_required
 def references_db(request):
-    profile = request.user.employeeprofile
-    refcodes = list(Refcode.objects.all().order_by('ref_code'))
-    form = NewRefcodeForm(request.POST)
+    try:
+        profile = request.user.employeeprofile
+        refcodes = list(Refcode.objects.all().order_by('pk'))
+        form = NewRefcodeForm(request.POST)
 
     # ADD INSTANCE
-    try:
+    
+        if 'query' in request.GET:
+            refcodes = list(Refcode.objects.filter(ref_code__contains=request.GET['query']))
+            if len(refcodes) == 0:
+                refcodes = list(Refcode.objects.all().order_by('pk'))
+                return render(request, 'features/reference.html', {
+                    'profile' : profile,
+                    'refcodes' : refcodes,
+                    'user': request.user,
+                    'form': form,
+                    'error' : 'Any result for this query',
+                        }
+                )        
         if request.method == 'POST':
             form = NewRefcodeForm(request.POST)
             

@@ -121,6 +121,7 @@ body {
     align-items: center;
     background-color: #03002d;
     background-image: linear-gradient(#03002d 30%, black 70%);
+    overflow: hidden;
 }
 
 .field {
@@ -221,6 +222,8 @@ body {
   color: white;
 
   width: 95%;
+  height: 80%;
+  overflow-y: scroll;
 }
 
 .table_refcode table{
@@ -366,10 +369,10 @@ body {
 .content_references{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    height: 90%;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 

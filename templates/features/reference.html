@@ -4,8 +4,12 @@
 
 <div class="content_references">
     <div class="table_inputs">
-        <input class='search_bar' type="text" name="search" >
-        <input class='search_button' type="submit" value="Search">
+    <form action="{% url 'reftable' %}" method="GET">
+      {% csrf_token %}
+      <input class='search_bar' type="text" name="query" >
+      <input class='search_button' type="submit" value="Search">
+    </form>
+
         <a class='table_button' onclick="openAddForm()">NEW</a>
         <a class='table_button'href="">UPDATE</a>
         <form class='table_button' action="{% url 'deleterefcode' %}" method='POST'>
