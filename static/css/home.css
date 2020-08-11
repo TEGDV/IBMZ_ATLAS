@@ -1,0 +1,85 @@
+.homepage{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.homepage_header{
+    width: 100%;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+
+.homepage_tips{
+    width: 100%;
+    height: 35%;
+    padding-left: 3%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.homepage_tips--item{
+    border: 1px solid whitesmoke;
+    border-radius: 0 0 50px 0;
+    border-left: 15px solid goldenrod;
+    width: 90%;
+    height: 100px;
+    background-color: rgba(222, 184, 135, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage_advices--item{
+    border: 1px solid whitesmoke;
+    border-radius: 0 0 50px 0;
+    border-left: 15px solid green;
+    width: 90%;
+    height: 100px;
+    background-color: rgba(222, 184, 135, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage_sticknotes{
+    width: 100%;
+    height: 35%;
+    padding-left: 3%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.homepage_sticknotes--item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 200px;
+    border: 1px solid white;
+    background-color: yellowgreen;
+    padding: 5px 15px;
+}
+
+.homepage_sticknotes--item label{
+    font-size: 12px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+#date_field{
+   align-self: flex-end;
+}
