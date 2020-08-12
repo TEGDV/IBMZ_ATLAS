@@ -20,7 +20,26 @@
             <h3>advices area</h3>
         </div>
     </div>
+    <div id="add_new_sticky_note" onclick="openForm()">
+        <i class="fa fa-plus fa-lg"></i>
+    </div>
+    <div id="add">
+        <form id="add_stickynote_form" action="{ url 'home' }" method='POST'>
+            <label for="ad_type">choose a type: </label>
+            <select name="ad_type" id="ad_type">
+                <option value="CR">Critical Advice</option>
+                <option value="WR">Warning Advice</option>
+                <option value="RM">Recomendation advice</option>
+            </select>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div>
+                <button type="submit">add</button>
+                <button type="button" onclick="closeForm()">cancel</button>
+            </div>
 
+        </form>
+
+    </div>
     <div class="homepage_sticknotes">
         <!--For item in Advices-->
         {% for item in sticky_notes %}
@@ -59,4 +78,16 @@
         {% endfor %}
     </div>
 </div>
+
+<script>
+   function openForm(){
+    
+    document.getElementById("add").style.display = "flex";
+  };
+
+  function closeForm(){
+    document.getElementById("add").style.display = "none";
+
+  };
+</script>
 {% endblock content %}
