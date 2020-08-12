@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
-from users.models import EmployeeProfile
+from users.models import EmployeeProfile, HomeAd
 from users.forms import EmployeeProfileUpdateForm
+
 # Create your views here.
 
 @login_required
@@ -92,7 +93,21 @@ def register(request):
 @login_required
 def home(request):
     profile = request.user.employeeprofile
-    return render(request, 'users/home.html', { 'profile' : profile })
+    sticky_notes = list(HomeAd.objects.all())
+    tips = list(HomeAd.objects.filter(ad_type='TP'))
+    advices = list(HomeAd.objects.filter(ad_type='AD'))
+    
+
+    if request.method == 'POST':
+        pass
+
+    return render(request, 'users/home.html', { 
+        'profile' : profile,
+        'sticky_notes' : sticky_notes,
+        'tips' : tips,
+        'advices' : advices,
+        }
+    )
 
 @login_required
 def profile(request):

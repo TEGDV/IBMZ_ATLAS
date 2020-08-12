@@ -1,9 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from users.models import EmployeeProfile
+from users.models import EmployeeProfile, HomeAd
 from django.contrib.auth.models import User
 # Register your models here, if you want to see them into the Django admin site insted of use 
 # Your database console.
+
+@admin.register(HomeAd)
+class HomeAdadmin(admin.ModelAdmin):
+    pass
+
 @admin.register(EmployeeProfile)
 class EmployeeProfileAdmin(admin.ModelAdmin):
     #Profile admin

@@ -16,3 +16,30 @@ class EmployeeProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class HomeAd(models.Model):
+
+    CRITICAL = 'CR'
+    WARNINGS = 'WR'
+    RECOMENDATION = 'RM'
+    TIP = 'TP'
+    ADVICE = 'AD'
+    AD_TYPE_CHOICES = [
+        (CRITICAL, 'Critical'),
+        (WARNINGS, 'Warnimg'),
+        (RECOMENDATION, 'Recomendation'),
+        (TIP, 'Tip'),
+        (ADVICE, 'Advice'),
+    ]
+    ad_type= models.CharField(
+        max_length=2,
+        choices=AD_TYPE_CHOICES,
+        default=ADVICE,
+    )
+
+    ad_content= models.TextField(max_length = 255, blank = False, null = False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by= models.ForeignKey(User,on_delete=models.CASCADE)
+
+
+   

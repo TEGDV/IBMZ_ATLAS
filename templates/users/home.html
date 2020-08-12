@@ -23,14 +23,40 @@
 
     <div class="homepage_sticknotes">
         <!--For item in Advices-->
-        <div class="homepage_sticknotes--item">
-            <label>Creation DateTime</label>
-            <p>
-                advice content  ----Color----
-            </p>
-            <label id="date_field">Created By</label>
-        </div>
+        {% for item in sticky_notes %}
 
+            {% if item.ad_type == 'CR' %}
+                <div class="homepage_sticknotes--item" style="background-color: red;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+            {% if item.ad_type == 'WR' %}
+                <div class="homepage_sticknotes--item" style="background-color: gold;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+            {% if item.ad_type == 'RM' %}
+                <div class="homepage_sticknotes--item" style="background-color: green;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
