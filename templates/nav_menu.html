@@ -3,31 +3,31 @@
     <div class="nav_menu--container">
         <div class="menu--item">
             <a class="link--menu" href="{% url 'home' %}"> <span>HOME</span> <i class="fa fa-home fa-lg"></i></a>
-            
+
         </div>
         <div class="menu--item">
             <a class="link--menu" href="{% url 'reftable' %}"><span>REFERENCES</span><i class="fa fa-bug fa-lg"></i></a>
-            
+
         </div>
         <div class="menu--item">
-            <a class="link--menu" href=""><span>BLOG</span><i class="fa fa-rss fa-lg"></i></a>
-            
+            <a class="link--menu" href="{% url 'blog' %}"><span>BLOG</span><i class="fa fa-rss fa-lg"></i></a>
+
         </div>
         <div class="menu--item">
-            <a class="link--menu" href=""><span>TEAM Z</span><i class="fa fa-users fa-lg"></i></a>
-            
+            <a class="link--menu" href="{% url 'teamz' %}"><span>TEAM Z</span><i class="fa fa-users fa-lg"></i></a>
+
         </div>
         <div class="menu--item">
-            <a class="link--menu" href=""><span>MANUALS</span><i class="fa fa-book fa-lg"></i></a>
-            
+            <a class="link--menu" href="{% url 'manuals' %}"><span>MANUALS</span><i class="fa fa-book fa-lg"></i></a>
+
         </div>
         <div class="menu--item">
-            <a class="link--menu" href=""><span>VOCABULARY</span><i class="fa fa-lightbulb-o fa-lg"></i></a>
-            
+            <a class="link--menu" href="{% url 'vocabulary' %}"><span>VOCABULARY</span><i class="fa fa-lightbulb-o fa-lg"></i></a>
+
         </div>
         <div class="menu--item">
-            <a class="link--menu" href=""><span>STATUS</span><i class="fa fa-bar-chart fa-lg"></i></a>
-            
+            <a class="link--menu" href="{% url 'status' %}"><span>STATUS</span><i class="fa fa-bar-chart fa-lg"></i></a>
+
         </div>
     </div>
 </nav>

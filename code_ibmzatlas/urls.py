@@ -17,13 +17,14 @@ urlpatterns = [
     path('account/profile',users_views.profile, name='profile'),
     path('account/notifications',users_views.profile, name='notifications'),
     path('account/settings',users_views.settings, name='settings'),
-    path('account/me/update',users_views.update_profile, name='update'),
+    path('account/profile/update',users_views.update_profile, name='update'),
 
     # Features views
 
     path('account/blog/', features_views.list_post, name='blog'),
     path('account/home',users_views.home, name='home'),
     path('account/references/', features_views.references_db, name='reftable'),
+    path('account/references/delete', features_views.deleteRefcode, name='deleterefcode'),
     path('account/status',features_views.status, name='status'),
     path('account/team',features_views.teamz, name='teamz'),
     path('account/manuals',features_views.manuals, name='manuals'),

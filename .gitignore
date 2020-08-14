@@ -2,7 +2,8 @@
 **/__pycache__/**
 *.py[cod]
 *$py.class
-
+staticfiles
+staticfiles/*
 # C extensions
 *.so
 
@@ -110,3 +111,4 @@ media/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+static/pictures/*

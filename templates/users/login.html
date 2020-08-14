@@ -12,21 +12,30 @@
     <div class="form_container">
       <form class="form" action="{% url 'login' %}" method="POST">
         {% csrf_token %}
-        {% if error %}
-            <p style='color:red;'>{{ error }}</p>
-        {% endif %}
+
         <div class="form_fields">
           <input class="form--item" type="text" name="username" placeholder="Username">
           <input class="form--item" type="password" name="password" placeholder="password">
         </div>
-        <button class='form--button' type="submit" name="button">Sign In</button>
+        <div class="button_container">
+          <button class='form--button' type="submit" name="button">Sign In</button>
+          <a href="{% url 'register' %}"> Sign up </a>
+        </div>
+
         <div class="form_features">
           <label for=""><input type="checkbox" name="Remember me" value="Remember me"> Remember me</label> 
           <a class="form_features--forgot" href="#">I forgot my password</a>
         </div>
       </form>
     </div>
-
+    {% if error %}
+    <script>
+      
+      function alertUser(){
+        alert('{{ error }}');
+      };
+    </script>
+  {% endif %}
 </section>
 
 {% endblock %}

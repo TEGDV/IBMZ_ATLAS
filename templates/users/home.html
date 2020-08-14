@@ -1,7 +1,93 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css'%}">
+<title> Home Page | @{{ request.user.username }}</title>
+{% endblock %}
+
 {% block content %}
-<div class="working">
-    <img height="400px" width="500px" src="{% static 'app_images/working.png' %}" alt="">
+<div class="homepage">
+    <h1 class="homepage_header">Welcome, {{ request.user.username }} </h1>
+    <div class="homepage_tips">
+        <h3 class="homepage_welcome">
+            lorem ips sum
+        </h3>
+        <div class="homepage_tips--item">
+            <h3>tips area</h3>
+        </div>
+        <div class="homepage_advices--item">
+            <h3>advices area</h3>
+        </div>
+    </div>
+    <div id="add_new_sticky_note" onclick="openForm()">
+        <i class="fa fa-plus fa-lg"></i>
+    </div>
+    <div id="add">
+        <form id="add_stickynote_form" action="{ url 'home' }" method='POST'>
+            <label for="ad_type">choose a type: </label>
+            <select name="ad_type" id="ad_type">
+                <option value="CR">Critical Advice</option>
+                <option value="WR">Warning Advice</option>
+                <option value="RM">Recomendation advice</option>
+            </select>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div>
+                <button type="submit">add</button>
+                <button type="button" onclick="closeForm()">cancel</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="homepage_sticknotes">
+        <!--For item in Advices-->
+        {% for item in sticky_notes %}
+
+            {% if item.ad_type == 'CR' %}
+                <div class="homepage_sticknotes--item" style="background-color: red;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+            {% if item.ad_type == 'WR' %}
+                <div class="homepage_sticknotes--item" style="background-color: gold;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+            {% if item.ad_type == 'RM' %}
+                <div class="homepage_sticknotes--item" style="background-color: green;">
+                    <label> {{ item.created_at }}</label>
+                    <p>
+                        {{ item.ad_content }}
+                    </p>
+                    <label id="date_field"> {{ item.created_by }} </label>
+                </div>
+            {% endif %}
+
+
+        {% endfor %}
+    </div>
 </div>
+
+<script>
+   function openForm(){
+    
+    document.getElementById("add").style.display = "flex";
+  };
+
+  function closeForm(){
+    document.getElementById("add").style.display = "none";
+
+  };
+</script>
 {% endblock content %}
