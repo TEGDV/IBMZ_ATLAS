@@ -105,7 +105,7 @@
 
 #add_new_sticky_note:hover{
     cursor: pointer;
-    transition: .5s;
+    
     background-color: white;
     color: black;
 }

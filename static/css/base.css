@@ -226,6 +226,7 @@ body {
   overflow-y: scroll;
 }
 
+
 .table_refcode table{
   width: 100%;
 }
@@ -312,13 +313,25 @@ body {
 
 .table-row{
   color: white;
+  
   font-size: 14px;
+  cursor: pointer;
 
 }
+
+
+
+
+
+ 
+
+
 
 .table-row td{
     font-size: 14px;
   }
+
+
 
 .profile_content {
     display: grid;
