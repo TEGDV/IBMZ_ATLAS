@@ -71,6 +71,7 @@
     border-radius: 5px;
     border: 2px solid white;
     align-self: end;
+    place-self: flex-end;
     margin-right: 50px;
     transition: .5s;
 }

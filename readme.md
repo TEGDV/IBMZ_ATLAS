@@ -4,11 +4,11 @@ IBMZ: Atlas is a project made it to learn how to manipulate Python + Django, thi
 # Preview
 The some views about the app working
 ## Home Page
-![Home Page](https://res.cloudinary.com/tegdv97/image/upload/v1595635835/localhost_8000_account_references__s9b0jv.png)
+![Home Page](https://res.cloudinary.com/tegdv97/image/upload/v1597445655/localhost_8000_account_home_v1vbez.png)
 ## Login
 ![Login Page](https://res.cloudinary.com/tegdv97/image/upload/v1595635543/localhost_8000_login__dscevg.png)
 ## Profile
-![Profile Page](asdfasdfsadf)
+![Profile Page](https://res.cloudinary.com/tegdv97/image/upload/v1597445690/localhost_8000_account_profile_soiebk.png)
 
 # Documents
 To learn all about the project visit the Notion Documentation [here](https://www.notion.so/IBM-Z-Project-Atlas-9aac5e61a22b4e9a81db7a87a948bb1e)
@@ -20,5 +20,5 @@ To be able the installation of this app with whole its functionality, Install do
 
  1. Clone this repository in any folder into your computer
  2. Open your terminal and goes to the project root folder in console
- 3. Once you get into the root folder run `docker-compose up --build` then wait until the installation done.
+ 3. Once you get into the root folder run `docker-compose up` then wait until the installation done.
  4. Finally open your favorite web browser and go [Localhost:8000](localhost:8000)
