@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
+import urllib.parse as up
+import psycopg2
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0p1%73udm*3^#ngfoaybdhromvk#!j_4#0!c5iy-51v#n&nkdg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -82,17 +86,17 @@ WSGI_APPLICATION = 'code_ibmzatlas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ATLASDB',
-        'USER': 'TEGDV',
-        'PASSWORD': '@TEGDEV@',
-        'HOST': 'db',
-        'PORT': 5432,
-        'CONN_MAX_AGE': 500
-    }
-}
+DATABASES = {'default': dj_database_url.config(default='postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz')}
+DATABASE_URL = 'postgres://gxsgdbkz:I7CC1jhI6jiKJF8QwZHpGSUjh70nlN18@hanno.db.elephantsql.com:5432/gxsgdbkz'
+
+up.uses_netloc.append("postgres")
+url = up.urlparse(DATABASE_URL)
+conn = psycopg2.connect(database=url.path[1:],
+user=url.username,
+password=url.password,
+host=url.hostname,
+port=url.port
+)
 
 
 # Password validation
